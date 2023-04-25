@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Setup - れてぃのーと</title>
+<meta name="generator" content="Hugo 0.68.3" />
+<link href="https://retty3d.github.io//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://retty3d.github.io/wsl/ubuntu2004/setup/">
+<link rel="stylesheet" href="https://retty3d.github.io/css/theme.min.css">
+<link rel="stylesheet" href="https://retty3d.github.io/css/chroma.min.css">
+<script defer src="https://retty3d.github.io//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://retty3d.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Setup" />
+<meta property="og:description" content="WSL2 Ubuntu20.04 環境構築 1. 基本設定 $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ rcm \ zsh $ mkdir .ssh $ mkdir -p dev/github.com/car7ary # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &#34;mail@example.com&#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github # github疎通確認 $ git clone github:car7ary/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://retty3d.github.io/wsl/ubuntu2004/setup/" />
+<meta property="article:published_time" content="2023-04-25T21:26:00+09:00" />
+<meta property="article:modified_time" content="2023-04-25T21:31:18+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup"/>
+<meta name="twitter:description" content="WSL2 Ubuntu20.04 環境構築 1. 基本設定 $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ rcm \ zsh $ mkdir .ssh $ mkdir -p dev/github.com/car7ary # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &#34;mail@example.com&#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github # github疎通確認 $ git clone github:car7ary/."/>
+<meta itemprop="name" content="Setup">
+<meta itemprop="description" content="WSL2 Ubuntu20.04 環境構築 1. 基本設定 $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ rcm \ zsh $ mkdir .ssh $ mkdir -p dev/github.com/car7ary # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &#34;mail@example.com&#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github # github疎通確認 $ git clone github:car7ary/.">
+<meta itemprop="datePublished" content="2023-04-25T21:26:00&#43;09:00" />
+<meta itemprop="dateModified" content="2023-04-25T21:31:18&#43;09:00" />
+<meta itemprop="wordCount" content="149">
+
+
+
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>れてぃのーと</h1>
+</header>
+
+
+<div class="content-container">
+<main><h1>Setup</h1>
+<h1 id="wsl2-ubuntu2004-環境構築">WSL2 Ubuntu20.04 環境構築</h1>
+<h2 id="1-基本設定">1. 基本設定</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ~
+$ sudo apt update
+$ sudo apt install -y <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>git <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>neovim <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>rcm <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>zsh
+$ mkdir .ssh
+$ mkdir -p dev/github.com/car7ary <span style="color:#75715e"># 開発用ディレクトリ作成</span>
+$ ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;mail@example.com&#34;</span> <span style="color:#75715e"># 鍵ファイル名はgithub</span>
+$ cat github.pub <span style="color:#75715e"># コピーしてgithubのssh鍵に登録</span>
+$ nvim ~/.ssh/config <span style="color:#75715e"># -&gt; appendix-1を参照</span>
+$ chmod <span style="color:#ae81ff">700</span> ~/.ssh
+$ chmod <span style="color:#ae81ff">600</span> ~/.ssh/config
+$ ssh -T github <span style="color:#75715e"># github疎通確認</span>
+$ git clone github:car7ary/.dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ rcup <span style="color:#75715e"># Dotfilesのシンボリックリンク作成</span>
+$ ./setup.sh
+</code></pre></div><h2 id="2-wsl2設定">2. WSL2設定</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ nvim ~/.profile <span style="color:#75715e"># -&gt; appendix-2を参照</span>
+$ exec $SHELL -l
+</code></pre></div><h2 id="3-x-window設定">3. X Window設定</h2>
+<ol>
+<li>VcXsrvをインストールして実行</li>
+<li>DISPLAY環境変数を設定</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ nvim ~/.profile <span style="color:#75715e"># -&gt; appendix-3を参照</span>
+$ exec $SHELL -l
+$ sudo apt install x11-apps
+$ xeyes <span style="color:#75715e"># 動作確認</span>
+</code></pre></div><h2 id="appendix">Appendix</h2>
+<h5 id="appendix-1-sshconfig">appendix-1: ~/.ssh/config</h5>
+<pre><code class="language-ssh_config" data-lang="ssh_config">ServerAliveInterval 60
+
+Host github
+HostName github.com
+User git
+Port 22
+IdentityFile ~/.ssh/github
+</code></pre><h5 id="appendix-2-profile">appendix-2: ~/.profile</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export SCREENDIR<span style="color:#f92672">=</span>$HOME/.screen
+</code></pre></div><h5 id="appendix-3-profile">appendix-3: ~/.profile</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export DISPLAY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/resolv.conf | grep nameserver | awk <span style="color:#e6db74">&#39;{print $2; exit;}&#39;</span><span style="color:#66d9ef">)</span>:0.0
+</code></pre></div><div class="edit-meta">
+Last updated on 25 Apr 2023
+
+
+<br>
+Published on 25 Apr 2023
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://retty3d.github.io/wsl/ubuntu2004/" title="Ubuntu 20.04"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Ubuntu 20.04</a>
+<a class="nav nav-next" href="https://retty3d.github.io/ctf/" title="CTF (Capture The Flag)">Next - CTF (Capture The Flag) <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://retty3d.github.io/">Home</a></li>
+
+<li class=" has-sub-menu"><a href="https://retty3d.github.io/python/">Python<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://retty3d.github.io/python/cookbook/">Cookbook<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://retty3d.github.io/python/cookbook/caesar-cipher/">Caesar Cipher</a></li>
+</ul>
+  
+</li>
+
+<li class=" has-sub-menu"><a href="https://retty3d.github.io/python/libraries/">Libraries<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://retty3d.github.io/python/libraries/os/">os</a></li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class="parent has-sub-menu"><a href="https://retty3d.github.io/wsl/">WSL (Windows Subsystem for Linux)<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+
+<li class="parent has-sub-menu"><a href="https://retty3d.github.io/wsl/ubuntu2004/">Ubuntu 20.04<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://retty3d.github.io/wsl/ubuntu2004/setup/">Setup</a></li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=" has-sub-menu"><a href="https://retty3d.github.io/ctf/">CTF (Capture The Flag)<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://retty3d.github.io/ctf/cpawctf/">CpawCTF<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://retty3d.github.io/ctf/cpawctf/level1/">Level1 Write-ups</a></li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

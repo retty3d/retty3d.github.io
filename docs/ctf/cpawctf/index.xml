@@ -17,8 +17,9 @@
       <pubDate>Tue, 25 Apr 2023 16:57:13 +0900</pubDate>
       
       <guid>https://retty3d.github.io/ctf/cpawctf/level1/</guid>
-      <description>[Misc] Test Problem Flagを問題文からコピー・ペースト
-[Crypto] Classical Cipher [Reversing] Can you execute [Misc] Can you open this file [Web] HTML Page [Forensics] River [Network]pcap [Crypto]HashHashHash! [PPC]並べ替えろ! </description>
+      <description>[Misc] Test Problem Flagを問題文からコピー・ペースト。
+[Crypto] Classical Cipher 問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
+[Reversing] Can you execute [Misc] Can you open this file [Web] HTML Page [Forensics] River [Network]pcap [Crypto]HashHashHash! [PPC]並べ替えろ! </description>
     </item>
     
   </channel>

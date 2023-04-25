@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://retty3d.github.io/wsl/ubuntu2004/</loc>
+    <lastmod>2023-04-25T21:31:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://retty3d.github.io/wsl/ubuntu2004/setup/</loc>
+    <lastmod>2023-04-25T21:31:18+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://retty3d.github.io/python/cookbook/</loc>
     <lastmod>2023-04-25T20:47:28+09:00</lastmod>
   </url>
@@ -38,8 +48,13 @@
   </url>
   
   <url>
+    <loc>https://retty3d.github.io/wsl/</loc>
+    <lastmod>2023-04-25T21:31:18+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://retty3d.github.io/ctf/cpawctf/level1/</loc>
-    <lastmod>2023-04-25T18:20:20+09:00</lastmod>
+    <lastmod>2023-04-25T21:31:18+09:00</lastmod>
   </url>
   
   <url>
@@ -48,7 +63,7 @@
   
   <url>
     <loc>https://retty3d.github.io/ctf/</loc>
-    <lastmod>2023-04-25T18:20:20+09:00</lastmod>
+    <lastmod>2023-04-25T21:31:18+09:00</lastmod>
   </url>
   
   <url>
