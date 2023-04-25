@@ -4,7 +4,15 @@ title = "れてぃのーと"
 theme = "hugo-theme-techdoc"
 publishDir = "docs"
 canonifyurls = true
-
+enableGitInfo = true
 
 [params]
-    menu_style = "slide-menu" # "open-menu" or "slide-menu" or "" blank is as no sidebar
+    AuthorName = "retty3d"
+    GitHubUser = "retty3d"
+    menu_style = "slide-menu"
+
+[frontmatter]
+    date = ['date', 'publishDate', 'lastmod']
+    expiryDate = ['expiryDate']
+    lastmod = [':git', 'lastmod', 'date', 'publishDate']
+    publishDate = ['publishDate', 'date']
