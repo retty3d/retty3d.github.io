@@ -1,5 +1,5 @@
 ---
-title: "CTF"
+title: "CTF (Capture The Flag)"
 description: "Capture The Flag (CTF) is a type of cybersecurity competition that challenges participants to solve a variety of security-related problems. This section includes CTFs related content."
 ---
 

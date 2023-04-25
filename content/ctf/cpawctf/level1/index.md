@@ -6,9 +6,13 @@ draft: false
 
 ##### [Misc] Test Problem
 
-Flagを問題文からコピー・ペースト
+Flagを問題文からコピー・ペースト。
 
 ##### [Crypto] Classical Cipher
+
+問題文のシーザー暗号をdecryptするだけ。
+参考: [caesar-cipher](../../../python/cookbook/caesar-cipher/)
+
 ##### [Reversing] Can you execute
 ##### [Misc] Can you open this file
 ##### [Web] HTML Page
