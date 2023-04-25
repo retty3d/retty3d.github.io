@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Libraries on れてぃのーと</title>
+    <link>https://retty3d.github.io/python/libraries/</link>
+    <description>Recent content in Libraries on れてぃのーと</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 25 Apr 2023 17:49:43 +0900</lastBuildDate>
+    
+	<atom:link href="https://retty3d.github.io/python/libraries/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>os</title>
+      <link>https://retty3d.github.io/python/libraries/os/</link>
+      <pubDate>Tue, 25 Apr 2023 17:24:39 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/python/libraries/os/</guid>
+      <description>import os </description>
+    </item>
+    
+  </channel>
+</rss>
