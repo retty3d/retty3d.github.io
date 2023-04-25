@@ -2,3 +2,5 @@ baseURL = "https://retty3d.github.io/"
 languageCode = "ja-jp"
 title = "れてぃのーと"
 theme = "hugo-theme-techdoc"
+publishDir = "docs"
+canonifyurls = true
