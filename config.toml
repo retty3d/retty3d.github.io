@@ -4,3 +4,7 @@ title = "れてぃのーと"
 theme = "hugo-theme-techdoc"
 publishDir = "docs"
 canonifyurls = true
+
+
+[params]
+    menu_style = "slide-menu" # "open-menu" or "slide-menu" or "" blank is as no sidebar
