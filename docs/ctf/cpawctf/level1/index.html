@@ -19,23 +19,38 @@
 <meta property="og:title" content="Level1 Write-ups" />
 <meta property="og:description" content="[Misc] Test Problem Flagを問題文からコピー・ペースト。
 [Crypto] Classical Cipher 問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
-[Reversing] Can you execute [Misc] Can you open this file [Web] HTML Page [Forensics] River [Network]pcap [Crypto]HashHashHash! [PPC]並べ替えろ! " />
+[Reversing] Can you execute 問題ページからexec_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。
+&gt; file exec_me exec_me: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.24 適切な環境でexec_meを実行するとフラグを得られる。
+追加情報
+readelf -hを利用することでバイナリに含まれるヘッダ情報を表示することが可能。
+[Misc] Can you open this file 問題ページからopen_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を.docなどに変更して開くとフラグを得られる。
+&gt; file open_me open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.0, Code page: 932, Author: v, Template: Normal.dotm, Last Saved By: v, Revision Number: 1, Name of Creating Application: Microsoft Office Word, Total Editing Time: 28:00, Create Time/Date: Mon Oct 12 04:27:00 2015, Last Saved Time/Date: Mon Oct 12 04:55:00 2015, Number of Pages: 1, Number of Words: 3, Number of Characters: 23, Security: 0 [Web] HTML Page Chrome Dev Toolなどでソースコードを表示し、cpawなどで検索するとフラグを得られる。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://retty3d.github.io/ctf/cpawctf/level1/" />
 <meta property="article:published_time" content="2023-04-25T16:57:13+09:00" />
-<meta property="article:modified_time" content="2023-04-25T21:31:18+09:00" />
+<meta property="article:modified_time" content="2023-04-26T19:03:11+09:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Level1 Write-ups"/>
 <meta name="twitter:description" content="[Misc] Test Problem Flagを問題文からコピー・ペースト。
 [Crypto] Classical Cipher 問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
-[Reversing] Can you execute [Misc] Can you open this file [Web] HTML Page [Forensics] River [Network]pcap [Crypto]HashHashHash! [PPC]並べ替えろ! "/>
+[Reversing] Can you execute 問題ページからexec_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。
+&gt; file exec_me exec_me: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.24 適切な環境でexec_meを実行するとフラグを得られる。
+追加情報
+readelf -hを利用することでバイナリに含まれるヘッダ情報を表示することが可能。
+[Misc] Can you open this file 問題ページからopen_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を.docなどに変更して開くとフラグを得られる。
+&gt; file open_me open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.0, Code page: 932, Author: v, Template: Normal.dotm, Last Saved By: v, Revision Number: 1, Name of Creating Application: Microsoft Office Word, Total Editing Time: 28:00, Create Time/Date: Mon Oct 12 04:27:00 2015, Last Saved Time/Date: Mon Oct 12 04:55:00 2015, Number of Pages: 1, Number of Words: 3, Number of Characters: 23, Security: 0 [Web] HTML Page Chrome Dev Toolなどでソースコードを表示し、cpawなどで検索するとフラグを得られる。"/>
 <meta itemprop="name" content="Level1 Write-ups">
 <meta itemprop="description" content="[Misc] Test Problem Flagを問題文からコピー・ペースト。
 [Crypto] Classical Cipher 問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
-[Reversing] Can you execute [Misc] Can you open this file [Web] HTML Page [Forensics] River [Network]pcap [Crypto]HashHashHash! [PPC]並べ替えろ! ">
+[Reversing] Can you execute 問題ページからexec_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。
+&gt; file exec_me exec_me: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.24 適切な環境でexec_meを実行するとフラグを得られる。
+追加情報
+readelf -hを利用することでバイナリに含まれるヘッダ情報を表示することが可能。
+[Misc] Can you open this file 問題ページからopen_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を.docなどに変更して開くとフラグを得られる。
+&gt; file open_me open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.0, Code page: 932, Author: v, Template: Normal.dotm, Last Saved By: v, Revision Number: 1, Name of Creating Application: Microsoft Office Word, Total Editing Time: 28:00, Create Time/Date: Mon Oct 12 04:27:00 2015, Last Saved Time/Date: Mon Oct 12 04:55:00 2015, Number of Pages: 1, Number of Words: 3, Number of Characters: 23, Security: 0 [Web] HTML Page Chrome Dev Toolなどでソースコードを表示し、cpawなどで検索するとフラグを得られる。">
 <meta itemprop="datePublished" content="2023-04-25T16:57:13&#43;09:00" />
-<meta itemprop="dateModified" content="2023-04-25T21:31:18&#43;09:00" />
-<meta itemprop="wordCount" content="28">
+<meta itemprop="dateModified" content="2023-04-26T19:03:11&#43;09:00" />
+<meta itemprop="wordCount" content="151">
 
 
 
@@ -47,26 +62,51 @@
 
 <div class="content-container">
 <main><h1>Level1 Write-ups</h1>
-<h5 id="misc-test-problem">[Misc] Test Problem</h5>
+<h4 id="misc-test-problem">[Misc] Test Problem</h4>
 <p>Flagを問題文からコピー・ペースト。</p>
-<h5 id="crypto-classical-cipher">[Crypto] Classical Cipher</h5>
+<h4 id="crypto-classical-cipher">[Crypto] Classical Cipher</h4>
 <p>問題文のシーザー暗号をdecryptするだけ。
 参考: <a href="../../../python/cookbook/caesar-cipher/">caesar-cipher</a></p>
-<h5 id="reversing-can-you-execute">[Reversing] Can you execute</h5>
-<h5 id="misc-can-you-open-this-file">[Misc] Can you open this file</h5>
-<h5 id="web-html-page">[Web] HTML Page</h5>
-<h5 id="forensics-river">[Forensics] River</h5>
-<h5 id="networkpcap">[Network]pcap</h5>
-<h5 id="cryptohashhashhash">[Crypto]HashHashHash!</h5>
-<h5 id="ppc並べ替えろ">[PPC]並べ替えろ!</h5>
+<h4 id="reversing-can-you-execute">[Reversing] Can you execute</h4>
+<p>問題ページから<code>exec_me</code>をダウンロードし、Linuxの<code>file</code>コマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; file exec_me
+exec_me: ELF 64-bit LSB executable, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, <span style="color:#66d9ef">for</span> GNU/Linux 2.6.24
+</code></pre></div><p>適切な環境でexec_meを実行するとフラグを得られる。</p>
+<p><strong>追加情報</strong></p>
+<p><code>readelf -h</code>を利用することでバイナリに含まれるヘッダ情報を表示することが可能。</p>
+<h4 id="misc-can-you-open-this-file">[Misc] Can you open this file</h4>
+<p>問題ページから<code>open_me</code>をダウンロードし、Linuxの<code>file</code>コマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を<code>.doc</code>などに変更して開くとフラグを得られる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; file open_me
+open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.0, Code page: 932, Author: v, Template: Normal.dotm, Last Saved By: v, Revision Number: 1, Name of Creating Application: Microsoft Office Word, Total Editing Time: 28:00, Create Time/Date: Mon Oct <span style="color:#ae81ff">12</span> 04:27:00 2015, Last Saved Time/Date: Mon Oct <span style="color:#ae81ff">12</span> 04:55:00 2015, Number of Pages: 1, Number of Words: 3, Number of Characters: 23, Security: <span style="color:#ae81ff">0</span>
+</code></pre></div><h4 id="web-html-page">[Web] HTML Page</h4>
+<p>Chrome Dev Toolなどでソースコードを表示し、<code>cpaw</code>などで検索するとフラグを得られる。</p>
+<h4 id="forensics-river">[Forensics] River</h4>
+<p>ImageMagickのidentifyを使うと画像の詳細情報を表示できる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ identify --verbose river.jpg
+</code></pre></div><p>表示された内容を眺めているとGPS情報が含まれていることが分かるので、あとは検索するだけ。</p>
+<p><strong>追加情報</strong></p>
+<p>座標の表記方法について(参考:<a href="https://support.google.com/maps/answer/18539?hl=ja&amp;co=GENIE.Platform%3DDesktop">リンク</a>)</p>
+<blockquote>
+<ul>
+<li>度（DD）: 41.40338, 2.17403</li>
+<li>度分秒（DMS）: 41°24&rsquo;12.2&quot;N 2°10&rsquo;26.5&quot;E</li>
+<li>度分（DMM）: 41 24.2028, 2 10.4418</li>
+</ul>
+</blockquote>
+<h4 id="networkpcap">[Network]pcap</h4>
+<p>Wiresharkでpcapファイルを開き、パケットをダブルクリックで開くとバイト列が表示されるので、そのなかからフラグを探して完了。</p>
+<h4 id="cryptohashhashhash">[Crypto]HashHashHash!</h4>
+<p>Hash Toolkitで検索。</p>
+<h4 id="ppc並べ替えろ">[PPC]並べ替えろ!</h4>
+<p>配列を降順ソートして連結して完了。</p>
 <div class="edit-meta">
-Last updated on 25 Apr 2023
+Last updated on 26 Apr 2023
 
 
 <br>
 Published on 25 Apr 2023
 <br></div><nav class="pagination"><a class="nav nav-prev" href="https://retty3d.github.io/ctf/cpawctf/" title="CpawCTF"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - CpawCTF</a>
-<a class="nav nav-next" href="https://retty3d.github.io/python/" title="Python">Next - Python <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://retty3d.github.io/ctf/setup/" title="CTF Setup">Next - CTF Setup <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -117,6 +157,10 @@ Published on 25 Apr 2023
 <li class="parent has-sub-menu"><a href="https://retty3d.github.io/ctf/">CTF (Capture The Flag)<span class="mark opened">-</span></a>
   
 <ul class="sub-menu">
+
+<li class=""><a href="https://retty3d.github.io/ctf/setup/">CTF Setup</a>
+  
+</li>
 
 <li class="parent has-sub-menu"><a href="https://retty3d.github.io/ctf/cpawctf/">CpawCTF<span class="mark opened">-</span></a>
   

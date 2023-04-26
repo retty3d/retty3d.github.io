@@ -17,7 +17,7 @@
       <pubDate>Tue, 25 Apr 2023 21:26:00 +0900</pubDate>
       
       <guid>https://retty3d.github.io/wsl/ubuntu2004/setup/</guid>
-      <description>WSL2 Ubuntu20.04 環境構築 1. 基本設定 $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ rcm \ zsh $ mkdir .ssh $ mkdir -p dev/github.com/car7ary # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &amp;#34;mail@example.com&amp;#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&amp;gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github # github疎通確認 $ git clone github:car7ary/.</description>
+      <description>WSL2 Ubuntu20.04 環境構築 1. 基本設定 $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ zsh $ mkdir .ssh $ mkdir -p src/github.com/$USERNAME # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &amp;#34;mail@example.com&amp;#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&amp;gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github.com # github疎通確認 $ git clone github.com:retty3d/dotfiles.git ~/dotfiles $ cd ~/dotfiles $ .</description>
     </item>
     
   </channel>
