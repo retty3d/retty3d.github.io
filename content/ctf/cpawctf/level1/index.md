@@ -59,5 +59,12 @@ $ identify --verbose river.jpg
 > - 度分（DMM）: 41 24.2028, 2 10.4418
 
 #### [Network]pcap
+
+Wiresharkでpcapファイルを開き、パケットをダブルクリックで開くとバイト列が表示されるので、そのなかからフラグを探して完了。
+
 #### [Crypto]HashHashHash!
+
+Hash Toolkitで検索。
 #### [PPC]並べ替えろ!
+
+配列を降順ソートして連結して完了。
