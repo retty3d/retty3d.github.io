@@ -14,20 +14,18 @@ $ sudo apt update
 $ sudo apt install -y \
 git \
 neovim \
-rcm \
 zsh
 $ mkdir .ssh
-$ mkdir -p dev/github.com/car7ary # 開発用ディレクトリ作成
+$ mkdir -p src/github.com/$USERNAME # 開発用ディレクトリ作成
 $ ssh-keygen -t ed25519 -C "mail@example.com" # 鍵ファイル名はgithub
 $ cat github.pub # コピーしてgithubのssh鍵に登録
 $ nvim ~/.ssh/config # -> appendix-1を参照
 $ chmod 700 ~/.ssh
 $ chmod 600 ~/.ssh/config
-$ ssh -T github # github疎通確認
-$ git clone github:car7ary/.dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ rcup # Dotfilesのシンボリックリンク作成
-$ ./setup.sh
+$ ssh -T github.com # github疎通確認
+$ git clone github.com:retty3d/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles
+$ ./install.sh
 ```
 
 ## 2. WSL2設定
@@ -55,11 +53,10 @@ $ xeyes # 動作確認
 ```ssh_config
 ServerAliveInterval 60
 
-Host github
-HostName github.com
-User git
-Port 22
-IdentityFile ~/.ssh/github
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github
 ```
 
 ##### appendix-2: ~/.profile
