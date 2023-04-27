@@ -3,10 +3,10 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>CpawCTF - れてぃのーと</title>
+<title>Level2 Write-ups - れてぃのーと</title>
 <meta name="generator" content="Hugo 0.68.3" />
 <link href="https://retty3d.github.io//index.xml" rel="alternate" type="application/rss+xml">
-<link rel="canonical" href="https://retty3d.github.io/ctf/cpawctf/">
+<link rel="canonical" href="https://retty3d.github.io/ctf/cpawctf/level2/">
 <link rel="stylesheet" href="https://retty3d.github.io/css/theme.min.css">
 <link rel="stylesheet" href="https://retty3d.github.io/css/chroma.min.css">
 <script defer src="https://retty3d.github.io//js/fontawesome6/all.min.js"></script>
@@ -16,30 +16,53 @@
 <script src="https://retty3d.github.io/js/bundle.js"></script><style>
 :root {}
 </style>
-<meta property="og:title" content="CpawCTF" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://retty3d.github.io/ctf/cpawctf/" />
-<meta property="og:updated_time" content="2023-04-25T17:37:54+09:00" />
+<meta property="og:title" content="Level2 Write-ups" />
+<meta property="og:description" content="[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
+[Web] Redirect [Network&#43;Forensic]HTTP Traffic [Recon]Who am I ? [Forensic]leaf in forest [Misc]Image! [Crypto]Block Cipher [Reversing]reversing easy! [Web]Baby&rsquo;s SQLi - Stage 1- [Network] Can you login？ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://retty3d.github.io/ctf/cpawctf/level2/" />
+<meta property="article:published_time" content="2023-04-25T17:47:48+09:00" />
+<meta property="article:modified_time" content="2023-04-28T01:46:47+09:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CpawCTF"/>
-<meta name="twitter:description" content=""/>
-<meta itemprop="name" content="CpawCTF">
-<meta itemprop="description" content=""></head>
+<meta name="twitter:title" content="Level2 Write-ups"/>
+<meta name="twitter:description" content="[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
+[Web] Redirect [Network&#43;Forensic]HTTP Traffic [Recon]Who am I ? [Forensic]leaf in forest [Misc]Image! [Crypto]Block Cipher [Reversing]reversing easy! [Web]Baby&rsquo;s SQLi - Stage 1- [Network] Can you login？ "/>
+<meta itemprop="name" content="Level2 Write-ups">
+<meta itemprop="description" content="[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
+[Web] Redirect [Network&#43;Forensic]HTTP Traffic [Recon]Who am I ? [Forensic]leaf in forest [Misc]Image! [Crypto]Block Cipher [Reversing]reversing easy! [Web]Baby&rsquo;s SQLi - Stage 1- [Network] Can you login？ ">
+<meta itemprop="datePublished" content="2023-04-25T17:47:48&#43;09:00" />
+<meta itemprop="dateModified" content="2023-04-28T01:46:47&#43;09:00" />
+<meta itemprop="wordCount" content="27">
+
+
+
+<meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>れてぃのーと</h1>
 </header>
 
 
 <div class="content-container">
-<main><h1>CpawCTF</h1><div class="edit-meta">
-Last updated on 25 Apr 2023
+<main><h1>Level2 Write-ups</h1>
+<h4 id="stego隠されたフラグ">[Stego]隠されたフラグ</h4>
+<p>画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。</p>
+<h4 id="web-redirect">[Web] Redirect</h4>
+<h4 id="networkforensichttp-traffic">[Network+Forensic]HTTP Traffic</h4>
+<h4 id="reconwho-am-i-">[Recon]Who am I ?</h4>
+<h4 id="forensicleaf-in-forest">[Forensic]leaf in forest</h4>
+<h4 id="miscimage">[Misc]Image!</h4>
+<h4 id="cryptoblock-cipher">[Crypto]Block Cipher</h4>
+<h4 id="reversingreversing-easy">[Reversing]reversing easy!</h4>
+<h4 id="webbabys-sqli---stage-1-">[Web]Baby&rsquo;s SQLi - Stage 1-</h4>
+<h4 id="network-can-you-login">[Network] Can you login？</h4>
+<div class="edit-meta">
+Last updated on 28 Apr 2023
 
 
 <br>
 Published on 25 Apr 2023
-<br></div><nav class="pagination"><a class="nav nav-prev" href="https://retty3d.github.io/ctf/cpawctf/level1/" title="Level1 Write-ups"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Level1 Write-ups</a>
-<a class="nav nav-next" href="https://retty3d.github.io/ctf/cpawctf/level2/" title="Level2 Write-ups">Next - Level2 Write-ups <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://retty3d.github.io/ctf/cpawctf/" title="CpawCTF"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - CpawCTF</a>
+<a class="nav nav-next" href="https://retty3d.github.io/ctf/cpawctf/level1/" title="Level1 Write-ups">Next - Level1 Write-ups <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -95,10 +118,10 @@ Published on 25 Apr 2023
   
 </li>
 
-<li class="parent active has-sub-menu"><a href="https://retty3d.github.io/ctf/cpawctf/">CpawCTF<span class="mark opened">-</span></a>
+<li class="parent has-sub-menu"><a href="https://retty3d.github.io/ctf/cpawctf/">CpawCTF<span class="mark opened">-</span></a>
   
 <ul class="sub-menu">
-<li class=""><a href="https://retty3d.github.io/ctf/cpawctf/level2/">Level2 Write-ups</a></li>
+<li class="active"><a href="https://retty3d.github.io/ctf/cpawctf/level2/">Level2 Write-ups</a></li>
 <li class=""><a href="https://retty3d.github.io/ctf/cpawctf/level1/">Level1 Write-ups</a></li>
 </ul>
   
