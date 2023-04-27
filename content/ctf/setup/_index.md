@@ -15,4 +15,5 @@ draft: false
 - VirtualBox
 
 ### Webサービス
-- [Hash Toolkit](https://hashtoolkit.com/generate-hash/?text=Shal)
+- [Hash Toolkit](https://hashtoolkit.com)
+- [Morse Code Translator](https://morsedecoder.com)
