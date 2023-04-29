@@ -37,7 +37,17 @@
       
       <guid>https://retty3d.github.io/ctf/cpawctf/level2/</guid>
       <description>[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
-[Web] Redirect [Network+Forensic]HTTP Traffic [Recon]Who am I ? [Forensic]leaf in forest [Misc]Image! [Crypto]Block Cipher [Reversing]reversing easy! [Web]Baby&amp;rsquo;s SQLi - Stage 1- [Network] Can you login？ </description>
+[Web] Redirect HTTPヘッダを確認する。
+$ curl -I http://q15.ctf.cpaw.site 302でリダイレクトされていることがわかる。 ついでにフラグもわかる。
+[Network+Forensic]HTTP Traffic  ダウンロードしたpcapファイルをWiresharkで開く ファイル label&amp;gt; オブジェクトをエクスポート &amp;gt; HTTP  すべて保存し、適切なディレクトリにファイルを配置する ブラウザで保存したページを開き、ボタンを押すとフラグを得られる  [Recon]Who am I ? Twitterアカウントを検索する。
+[Forensic]leaf in forest ダウンロードしたファイルをfileコマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。
+バイナリエディタでファイルを開いて眺めていると、大量のlovelive!とその中に怪しい文字列が含まれていることが分かる。
+目grepするか、文字列置換などしてフラグを抽出。
+今回はlovelive!を空白に置換して残った文字列から拾ってフラグを取得。 もっとスマートな方法があるかもしれないけどわからない。
+[Misc]Image! ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。
+LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示。
+邪魔な四角のオブジェクトを取り除くとフラグを得られる。
+[Crypto]Block Cipher #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&amp;#34;cpaw{&amp;#34;); for(i = key - 1; i &amp;lt;= strlen(flag); i+=key) for(j = i; j&amp;gt;= i - key + 1; j--) printf(&amp;#34;%c&amp;#34;, flag[j]); printf(&amp;#34;}&amp;#34;); return 0; }  実行時に引数を2つ受け取りそう  .</description>
     </item>
     
     <item>
