@@ -91,5 +91,23 @@ keyに与えられた値で文字列を区切って、その文字列を後ろ�
 今回の問題では、key=4で実行するとフラグを得ることができる。
 
 #### [Reversing]reversing easy!
+
+
+
 #### [Web]Baby's SQLi - Stage 1-
+
+```sql
+select * from palloc_home
+```
+
 #### [Network] Can you login？
+
+1. pcapファイルを開き、ftpでフィルタするとftpサーバのusernameとpasswordが見える。
+1. `ftp`コマンドでftpサーバらしきものに接続
+  ```bash
+  $ ftp xxx.xxx.xxx.xxx
+  ftp> passive
+  ftp> pwd
+  ftp> dir -a
+  ftp> get ${FLAG_FILE}
+  ```
