@@ -9,11 +9,21 @@ draft: false
   - Ubuntu 20.04 (WSL)
   - Kali Linux 2023.1 (VM)
 
-#### ツール
-- Visual Studio Code
-- Wireshark
-- VirtualBox
+#### ツール (Windows11)
+- Visual Studio Code (テキストエディタ)
+- Stirling (バイナリエディタ)
+- Wireshark (プロトコルアナライザ)
+- VirtualBox (仮想化ソフト)
 
-### Webサービス
+#### Linux (WSL)
+
+```bash
+$ sudo apt -y install \
+    radare2
+```
+
+- radare2
+
+#### Webサービス
 - [Hash Toolkit](https://hashtoolkit.com)
 - [Morse Code Translator](https://morsedecoder.com)
