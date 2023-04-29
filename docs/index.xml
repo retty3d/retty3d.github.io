@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>リバースエンジニアリング</title>
+      <link>https://retty3d.github.io/ctf/knowledge/reverse-engineering-basics/</link>
+      <pubDate>Sat, 29 Apr 2023 15:04:40 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/ctf/knowledge/reverse-engineering-basics/</guid>
+      <description>基本的な流れ 表層解析 → 静的解析 → 動的解析
+表層解析 ファイルの概要を調べる。
+ file strings readelf objdump  </description>
+    </item>
+    
+    <item>
       <title>Setup</title>
       <link>https://retty3d.github.io/wsl/ubuntu2004/setup/</link>
       <pubDate>Tue, 25 Apr 2023 21:26:00 +0900</pubDate>
