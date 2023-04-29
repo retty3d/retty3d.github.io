@@ -32,7 +32,7 @@ LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://retty3d.github.io/ctf/cpawctf/level2/" />
 <meta property="article:published_time" content="2023-04-25T17:47:48+09:00" />
-<meta property="article:modified_time" content="2023-04-29T14:52:23+09:00" />
+<meta property="article:modified_time" content="2023-04-30T02:13:37+09:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Level2 Write-ups"/>
 <meta name="twitter:description" content="[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
@@ -61,8 +61,8 @@ LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示
 邪魔な四角のオブジェクトを取り除くとフラグを得られる。
 [Crypto]Block Cipher #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&#34;cpaw{&#34;); for(i = key - 1; i &lt;= strlen(flag); i&#43;=key) for(j = i; j&gt;= i - key &#43; 1; j--) printf(&#34;%c&#34;, flag[j]); printf(&#34;}&#34;); return 0; }  実行時に引数を2つ受け取りそう  .">
 <meta itemprop="datePublished" content="2023-04-25T17:47:48&#43;09:00" />
-<meta itemprop="dateModified" content="2023-04-29T14:52:23&#43;09:00" />
-<meta itemprop="wordCount" content="140">
+<meta itemprop="dateModified" content="2023-04-30T02:13:37&#43;09:00" />
+<meta itemprop="wordCount" content="159">
 
 
 
@@ -138,9 +138,19 @@ LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示
 <p>今回の問題では、key=4で実行するとフラグを得ることができる。</p>
 <h4 id="reversingreversing-easy">[Reversing]reversing easy!</h4>
 <h4 id="webbabys-sqli---stage-1-">[Web]Baby&rsquo;s SQLi - Stage 1-</h4>
-<h4 id="network-can-you-login">[Network] Can you login？</h4>
-<div class="edit-meta">
-Last updated on 29 Apr 2023
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> palloc_home
+</code></pre></div><h4 id="network-can-you-login">[Network] Can you login？</h4>
+<ol>
+<li>pcapファイルを開き、ftpでフィルタするとftpサーバのusernameとpasswordが見える。</li>
+<li><code>ftp</code>コマンドでftpサーバらしきものに接続</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ftp xxx.xxx.xxx.xxx
+ftp&gt; passive
+ftp&gt; pwd
+ftp&gt; dir -a
+ftp&gt; get <span style="color:#e6db74">${</span>FLAG_FILE<span style="color:#e6db74">}</span>
+</code></pre></div><div class="edit-meta">
+Last updated on 30 Apr 2023
 
 
 <br>
