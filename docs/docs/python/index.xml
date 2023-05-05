@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on れてぃのーと</title>
+    <link>https://retty3d.github.io/docs/python/</link>
+    <description>Recent content in Python on れてぃのーと</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 25 Apr 2023 17:34:54 +0900</lastBuildDate>
+    
+	<atom:link href="https://retty3d.github.io/docs/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>シーザー暗号</title>
+      <link>https://retty3d.github.io/docs/python/caesar-cipher/</link>
+      <pubDate>Tue, 25 Apr 2023 20:10:59 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/docs/python/caesar-cipher/</guid>
+      <description>シーザー暗号 シーザー暗号- Wikipedia
+エンコーダー実装例 def caesar_encrypt(plaintext, shift): ciphertext = &amp;#34;&amp;#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext += chr((ord(char) - 65 + shift) % 26 + 65) else: ciphertext += chr((ord(char) - 97 + shift) % 26 + 97) else: ciphertext += char return ciphertext デコーダー実装例 def caesar_decrypt(ciphertext, shift): plaintext = &amp;#34;&amp;#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext += chr((ord(char) - 65 - shift) % 26 + 65) else: plaintext += chr((ord(char) - 97 - shift) % 26 + 97) else: plaintext += char return plaintext 解説   isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。</description>
+    </item>
+    
+  </channel>
+</rss>
