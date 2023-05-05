@@ -2,6 +2,7 @@
 title: "Level1 Write-ups"
 date: 2023-04-25T16:57:13+09:00
 draft: false
+weight: 1
 ---
 
 #### [Misc] Test Problem

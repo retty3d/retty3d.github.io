@@ -8,4 +8,4 @@ draft: false
 
 ![icon](icon.jpg)
 
-このサイトはれてぃのーと([https://retty3d.github.io](https://retty3d.github.io))です。
+- GitHub: [retty3d](https://github.com/retty3d)

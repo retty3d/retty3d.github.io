@@ -1,18 +1,20 @@
 baseURL = "https://retty3d.github.io/"
 languageCode = "ja-jp"
 title = "れてぃのーと"
-theme = "hugo-theme-techdoc"
+theme = "hugo-book"
 publishDir = "docs"
 canonifyurls = true
 enableGitInfo = true
 
 [params]
-    AuthorName = "retty3d"
-    GitHubUser = "retty3d"
-    menu_style = "slide-menu"
-
-[params.meta]
-    favicon = true
+    BookTheme      = "light"
+    BookLogo       = "favicon/favicon.ico"
+    BookSection    = "docs"
+    BookToC        = false
+    BookRepo       = "https://github.com/retty3d/retty3d.github.io"
+    BookCommitPath = "commit"
+    BookSearch     = true
+    BookComments   = true
 
 [frontmatter]
     date = ['date', 'publishDate', 'lastmod']
