@@ -11,5 +11,18 @@
 	<atom:link href="https://retty3d.github.io/docs/rust/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>標準入力の受け取り方</title>
+      <link>https://retty3d.github.io/docs/rust/stdio/</link>
+      <pubDate>Fri, 05 May 2023 17:36:42 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/docs/rust/stdio/</guid>
+      <description>単一の数値 入力例
+ 10
+ use std::io; fn main() { let mut buf = String::new(); io::stdin() .read_line(&amp;amp;mut buf) .expect(&amp;#34;&amp;#34;); let x: i32 = buf.trim().parse().expect(&amp;#34;&amp;#34;); } 複数の数値 入力例
+ 10 20
+ use std::io; fn main() { let mut buf = String::new(); io::stdin() .read_line(&amp;amp;mut buf) .expect(&amp;#34;&amp;#34;); let numbers: Vec&amp;lt;i32&amp;gt; = buf .trim() .split_whitespace() .map(|x| x.parse().expect(&amp;#34;&amp;#34;)) .collect(); let a = numbers[0]; let b = numbers[1]; } </description>
+    </item>
+    
   </channel>
 </rss>
