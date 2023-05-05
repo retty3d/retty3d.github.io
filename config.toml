@@ -11,6 +11,9 @@ enableGitInfo = true
     GitHubUser = "retty3d"
     menu_style = "slide-menu"
 
+[params.meta]
+    favicon = true
+
 [frontmatter]
     date = ['date', 'publishDate', 'lastmod']
     expiryDate = ['expiryDate']

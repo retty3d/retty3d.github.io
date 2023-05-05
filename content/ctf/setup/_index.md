@@ -1,5 +1,5 @@
 ---
-title: "CTF Setup"
+title: "セットアップ"
 date: 2023-04-26T12:30:41+09:00
 draft: false
 ---
