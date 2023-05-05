@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ホーム on れてぃのーと</title>
-    <link>https://retty3d.github.io/</link>
-    <description>Recent content in ホーム on れてぃのーと</description>
+    <title>CpawCTF on れてぃのーと</title>
+    <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/</link>
+    <description>Recent content in CpawCTF on れてぃのーと</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 25 Apr 2023 17:20:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Apr 2023 17:37:54 +0900</lastBuildDate>
     
-	<atom:link href="https://retty3d.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>利用環境・ツール一覧</title>
-      <link>https://retty3d.github.io/docs/ctf/build-environments/</link>
-      <pubDate>Wed, 26 Apr 2023 12:30:41 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/ctf/build-environments/</guid>
-      <description>利用OS  Windows 11 Home  Ubuntu 20.04 (WSL) Kali Linux 2023.1 (VM)    ツール (Windows11)  Visual Studio Code (テキストエディタ) Stirling (バイナリエディタ) Wireshark (プロトコルアナライザ) VirtualBox (仮想化ソフト)  Linux (WSL) $ sudo apt -y install \  radare2  radare2  Webサービス  Hash Toolkit Morse Code Translator  </description>
-    </item>
     
     <item>
       <title>Level1</title>
@@ -54,36 +45,6 @@ $ curl -I http://q15.ctf.cpaw.site 302でリダイレクトされていること
 LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示。
 邪魔な四角のオブジェクトを取り除くとフラグを得られる。
 [Crypto]Block Cipher #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&amp;#34;cpaw{&amp;#34;); for(i = key - 1; i &amp;lt;= strlen(flag); i+=key) for(j = i; j&amp;gt;= i - key + 1; j--) printf(&amp;#34;%c&amp;#34;, flag[j]); printf(&amp;#34;}&amp;#34;); return 0; }  実行時に引数を2つ受け取りそう  .</description>
-    </item>
-    
-    <item>
-      <title>リバースエンジニアリング</title>
-      <link>https://retty3d.github.io/docs/ctf/reverse-engineering/</link>
-      <pubDate>Sat, 29 Apr 2023 15:04:40 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/ctf/reverse-engineering/</guid>
-      <description>基本的な流れ 表層解析 → 静的解析 → 動的解析
-表層解析 ファイルの概要を調べる。
- file strings readelf objdump  </description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 20.04</title>
-      <link>https://retty3d.github.io/docs/build_environments/ubuntu2004_setup/</link>
-      <pubDate>Tue, 25 Apr 2023 21:26:00 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/build_environments/ubuntu2004_setup/</guid>
-      <description>WSL2 Ubuntu20.04 環境構築 1. 基本設定 $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ zsh $ mkdir .ssh $ mkdir -p src/github.com/$USERNAME # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &amp;#34;mail@example.com&amp;#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&amp;gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github.com # github疎通確認 $ git clone github.com:retty3d/dotfiles.git ~/dotfiles $ cd ~/dotfiles $ .</description>
-    </item>
-    
-    <item>
-      <title>シーザー暗号</title>
-      <link>https://retty3d.github.io/docs/python/caesar-cipher/</link>
-      <pubDate>Tue, 25 Apr 2023 20:10:59 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/python/caesar-cipher/</guid>
-      <description>シーザー暗号 シーザー暗号- Wikipedia
-エンコーダー実装例 def caesar_encrypt(plaintext, shift): ciphertext = &amp;#34;&amp;#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext += chr((ord(char) - 65 + shift) % 26 + 65) else: ciphertext += chr((ord(char) - 97 + shift) % 26 + 97) else: ciphertext += char return ciphertext デコーダー実装例 def caesar_decrypt(ciphertext, shift): plaintext = &amp;#34;&amp;#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext += chr((ord(char) - 65 - shift) % 26 + 65) else: plaintext += chr((ord(char) - 97 - shift) % 26 + 97) else: plaintext += char return plaintext 解説   isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。</description>
     </item>
     
   </channel>
