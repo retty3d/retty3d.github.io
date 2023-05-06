@@ -6,9 +6,10 @@ draft: false
 ---
 
 #### 利用OS
-- Windows 11 Home
+- Host: Windows 11 Home
   - Ubuntu 20.04 (WSL)
   - Kali Linux 2023.1 (VM)
+- Host: MX Linux 21.3
 
 #### ツール (Windows11)
 - Visual Studio Code (テキストエディタ)
@@ -18,12 +19,13 @@ draft: false
 
 #### Linux (WSL)
 
+- radare2
+
+Install
 ```bash
 $ sudo apt -y install \
     radare2
 ```
-
-- radare2
 
 #### Webサービス
 - [Hash Toolkit](https://hashtoolkit.com)
