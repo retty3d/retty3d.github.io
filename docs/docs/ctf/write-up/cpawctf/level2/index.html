@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
-[Web] Redirect HTTPヘッダを確認する。
+<meta name="description" content="[Stego]隠されたフラグ #  画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
+[Web] Redirect #  HTTPヘッダを確認する。
 $ curl -I http://q15.ctf.cpaw.site 302でリダイレクトされていることがわかる。 ついでにフラグもわかる。
-[Network&#43;Forensic]HTTP Traffic  ダウンロードしたpcapファイルをWiresharkで開く ファイル label&gt; オブジェクトをエクスポート &gt; HTTP  すべて保存し、適切なディレクトリにファイルを配置する ブラウザで保存したページを開き、ボタンを押すとフラグを得られる  [Recon]Who am I ? Twitterアカウントを検索する。
-[Forensic]leaf in forest ダウンロードしたファイルをfileコマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。
+[Network&#43;Forensic]HTTP Traffic #   ダウンロードしたpcapファイルをWiresharkで開く ファイル label&gt; オブジェクトをエクスポート &gt; HTTP  すべて保存し、適切なディレクトリにファイルを配置する ブラウザで保存したページを開き、ボタンを押すとフラグを得られる  [Recon]Who am I ? #  Twitterアカウントを検索する。
+[Forensic]leaf in forest #  ダウンロードしたファイルをfileコマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。
 バイナリエディタでファイルを開いて眺めていると、大量のlovelive!とその中に怪しい文字列が含まれていることが分かる。
 目grepするか、文字列置換などしてフラグを抽出。
 今回はlovelive!を空白に置換して残った文字列から拾ってフラグを取得。 もっとスマートな方法があるかもしれないけどわからない。
-[Misc]Image! ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。
+[Misc]Image! #  ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。
 LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示。
 邪魔な四角のオブジェクトを取り除くとフラグを得られる。
-[Crypto]Block Cipher #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&#34;cpaw{&#34;); for(i = key - 1; i &lt;= strlen(flag); i&#43;=key) for(j = i; j&gt;= i - key &#43; 1; j--) printf(&#34;%c&#34;, flag[j]); printf(&#34;}&#34;); return 0; }  実行時に引数を2つ受け取りそう  .">
+[Crypto]Block Cipher #  #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&#34;cpaw{&#34;); for(i = key - 1; i &lt;= strlen(flag); i&#43;=key) for(j = i; j&gt;= i - key &#43; 1; j--) printf(&#34;%c&#34;, flag[j]); printf(&#34;}&#34;); return 0; }  実行時に引数を2つ受け取りそう  .">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Level2" />
-<meta property="og:description" content="[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
-[Web] Redirect HTTPヘッダを確認する。
+<meta property="og:description" content="[Stego]隠されたフラグ #  画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
+[Web] Redirect #  HTTPヘッダを確認する。
 $ curl -I http://q15.ctf.cpaw.site 302でリダイレクトされていることがわかる。 ついでにフラグもわかる。
-[Network&#43;Forensic]HTTP Traffic  ダウンロードしたpcapファイルをWiresharkで開く ファイル label&gt; オブジェクトをエクスポート &gt; HTTP  すべて保存し、適切なディレクトリにファイルを配置する ブラウザで保存したページを開き、ボタンを押すとフラグを得られる  [Recon]Who am I ? Twitterアカウントを検索する。
-[Forensic]leaf in forest ダウンロードしたファイルをfileコマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。
+[Network&#43;Forensic]HTTP Traffic #   ダウンロードしたpcapファイルをWiresharkで開く ファイル label&gt; オブジェクトをエクスポート &gt; HTTP  すべて保存し、適切なディレクトリにファイルを配置する ブラウザで保存したページを開き、ボタンを押すとフラグを得られる  [Recon]Who am I ? #  Twitterアカウントを検索する。
+[Forensic]leaf in forest #  ダウンロードしたファイルをfileコマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。
 バイナリエディタでファイルを開いて眺めていると、大量のlovelive!とその中に怪しい文字列が含まれていることが分かる。
 目grepするか、文字列置換などしてフラグを抽出。
 今回はlovelive!を空白に置換して残った文字列から拾ってフラグを取得。 もっとスマートな方法があるかもしれないけどわからない。
-[Misc]Image! ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。
+[Misc]Image! #  ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。
 LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示。
 邪魔な四角のオブジェクトを取り除くとフラグを得られる。
-[Crypto]Block Cipher #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&#34;cpaw{&#34;); for(i = key - 1; i &lt;= strlen(flag); i&#43;=key) for(j = i; j&gt;= i - key &#43; 1; j--) printf(&#34;%c&#34;, flag[j]); printf(&#34;}&#34;); return 0; }  実行時に引数を2つ受け取りそう  ." />
+[Crypto]Block Cipher #  #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&#34;cpaw{&#34;); for(i = key - 1; i &lt;= strlen(flag); i&#43;=key) for(j = i; j&gt;= i - key &#43; 1; j--) printf(&#34;%c&#34;, flag[j]); printf(&#34;}&#34;); return 0; }  実行時に引数を2つ受け取りそう  ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/" />
 <meta property="article:published_time" content="2023-04-25T17:47:48+09:00" />
-<meta property="article:modified_time" content="2023-05-05T17:24:00+09:00" />
+<meta property="article:modified_time" content="2023-05-09T15:57:57+09:00" />
 <title>Level2 | れてぃのーと</title>
 <link rel="manifest" href="https://retty3d.github.io/manifest.json">
 <link rel="icon" href="https://retty3d.github.io/favicon.png" type="image/x-icon">
@@ -90,9 +90,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="toggle"  />
-    <label for="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="flex justify-between">
-      <a role="button" class="">Python</a>
+    <input type="checkbox" id="section-e6354699fd2c0e4846471611979d74de" class="toggle"  />
+    <label for="section-e6354699fd2c0e4846471611979d74de" class="flex justify-between">
+      <a role="button" class="">Generative AI</a>
     </label>
   
 
@@ -106,7 +106,170 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://retty3d.github.io/docs/python/caesar-cipher/" class="">シーザー暗号</a>
+    <input type="checkbox" id="section-19d5ce72f5be6d0da4ec898140ddf80b" class="toggle"  />
+    <label for="section-19d5ce72f5be6d0da4ec898140ddf80b" class="flex justify-between">
+      <a role="button" class="">ChatGPT</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bc467201b327634cf4794420f221e449" class="toggle" checked />
+    <label for="section-bc467201b327634cf4794420f221e449" class="flex justify-between">
+      <a role="button" class="">CTF</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ac615972c0feff41ee8db9610c881361" class="toggle" checked />
+    <label for="section-ac615972c0feff41ee8db9610c881361" class="flex justify-between">
+      <a role="button" class="">Write Up</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-434a2e378c96930677ae689e88bd6362" class="toggle" checked />
+    <label for="section-434a2e378c96930677ae689e88bd6362" class="flex justify-between">
+      <a role="button" class="">CpawCTF</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-db2bcfa73b382cae9ba06dc905996c53" class="toggle" checked />
+    <label for="section-db2bcfa73b382cae9ba06dc905996c53" class="flex justify-between">
+      <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/" class="active">Level2</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7f0bc4fd74e403ddecf5c1220b61fa71" class="toggle"  />
+    <label for="section-7f0bc4fd74e403ddecf5c1220b61fa71" class="flex justify-between">
+      <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/" class="">Level1</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://retty3d.github.io/docs/ctf/reverse-engineering/" class="">リバースエンジニアリング</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://retty3d.github.io/docs/ctf/build-environments/" class="">利用環境・ツール一覧</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4743293995ef089d075c101a4e477e5c" class="toggle"  />
+    <label for="section-4743293995ef089d075c101a4e477e5c" class="flex justify-between">
+      <a role="button" class="">Misc</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://retty3d.github.io/docs/misc/ubuntu2004_setup/" class="">Ubuntu 20.04</a>
   
 
         </li>
@@ -158,9 +321,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc467201b327634cf4794420f221e449" class="toggle" checked />
-    <label for="section-bc467201b327634cf4794420f221e449" class="flex justify-between">
-      <a role="button" class="">CTF</a>
+    <input type="checkbox" id="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="toggle"  />
+    <label for="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="flex justify-between">
+      <a role="button" class="">Python</a>
     </label>
   
 
@@ -174,122 +337,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://retty3d.github.io/docs/ctf/build-environments/" class="">利用環境・ツール一覧</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/ctf/reverse-engineering/" class="">リバースエンジニアリング</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-ac615972c0feff41ee8db9610c881361" class="toggle" checked />
-    <label for="section-ac615972c0feff41ee8db9610c881361" class="flex justify-between">
-      <a role="button" class="">Write Up</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-434a2e378c96930677ae689e88bd6362" class="toggle" checked />
-    <label for="section-434a2e378c96930677ae689e88bd6362" class="flex justify-between">
-      <a role="button" class="">CpawCTF</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/" class="">Level1</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/" class="active">Level2</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-066599adf35bd20208481105d3523752" class="toggle"  />
-    <label for="section-066599adf35bd20208481105d3523752" class="flex justify-between">
-      <a role="button" class="">環境構築</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/build_environments/ubuntu2004_setup/" class="">Ubuntu 20.04</a>
+    <a href="https://retty3d.github.io/docs/python/caesar-cipher/" class="">シーザー暗号の実装</a>
   
 
         </li>
@@ -350,14 +398,23 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h4 id="stego隠されたフラグ">[Stego]隠されたフラグ</h4>
+  <article class="markdown"><h4 id="stego隠されたフラグ">
+  [Stego]隠されたフラグ
+  <a class="anchor" href="#stego%e9%9a%a0%e3%81%95%e3%82%8c%e3%81%9f%e3%83%95%e3%83%a9%e3%82%b0">#</a>
+</h4>
 <p>画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。</p>
-<h4 id="web-redirect">[Web] Redirect</h4>
+<h4 id="web-redirect">
+  [Web] Redirect
+  <a class="anchor" href="#web-redirect">#</a>
+</h4>
 <p>HTTPヘッダを確認する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -I http://q15.ctf.cpaw.site
 </code></pre></div><p>302でリダイレクトされていることがわかる。
 ついでにフラグもわかる。</p>
-<h4 id="networkforensichttp-traffic">[Network+Forensic]HTTP Traffic</h4>
+<h4 id="networkforensichttp-traffic">
+  [Network+Forensic]HTTP Traffic
+  <a class="anchor" href="#networkforensichttp-traffic">#</a>
+</h4>
 <ol>
 <li>ダウンロードしたpcapファイルをWiresharkで開く</li>
 <li>ファイル <a href="https://ctf.cpaw.site/index.php">label</a>&gt; オブジェクトをエクスポート &gt; HTTP
@@ -365,19 +422,31 @@ https://github.com/alex-shpak/hugo-book
 <li>すべて保存し、適切なディレクトリにファイルを配置する</li>
 <li>ブラウザで保存したページを開き、ボタンを押すとフラグを得られる</li>
 </ol>
-<h4 id="reconwho-am-i-">[Recon]Who am I ?</h4>
+<h4 id="reconwho-am-i-">
+  [Recon]Who am I ?
+  <a class="anchor" href="#reconwho-am-i-">#</a>
+</h4>
 <p>Twitterアカウントを検索する。</p>
-<h4 id="forensicleaf-in-forest">[Forensic]leaf in forest</h4>
+<h4 id="forensicleaf-in-forest">
+  [Forensic]leaf in forest
+  <a class="anchor" href="#forensicleaf-in-forest">#</a>
+</h4>
 <p>ダウンロードしたファイルを<code>file</code>コマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。</p>
 <p>バイナリエディタでファイルを開いて眺めていると、大量の<code>lovelive!</code>とその中に怪しい文字列が含まれていることが分かる。</p>
 <p>目grepするか、文字列置換などしてフラグを抽出。</p>
 <p>今回は<code>lovelive!</code>を空白に置換して残った文字列から拾ってフラグを取得。
 もっとスマートな方法があるかもしれないけどわからない。</p>
-<h4 id="miscimage">[Misc]Image!</h4>
+<h4 id="miscimage">
+  [Misc]Image!
+  <a class="anchor" href="#miscimage">#</a>
+</h4>
 <p>ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。</p>
 <p>LibreOfficeをインストールし、<code>misc 100.zip</code>をLibreOffice Writerで表示。</p>
 <p>邪魔な四角のオブジェクトを取り除くとフラグを得られる。</p>
-<h4 id="cryptoblock-cipher">[Crypto]Block Cipher</h4>
+<h4 id="cryptoblock-cipher">
+  [Crypto]Block Cipher
+  <a class="anchor" href="#cryptoblock-cipher">#</a>
+</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
@@ -412,10 +481,19 @@ https://github.com/alex-shpak/hugo-book
 <p>文字列ABCDを2文字ずつに区切ると、&ldquo;AB&rdquo;, &ldquo;CD&quot;となる。
 それぞれを後ろから一文字ずつ出力すると、&ldquo;BA&rdquo;, &ldquo;DC&quot;となる。</p>
 <p>今回の問題では、key=4で実行するとフラグを得ることができる。</p>
-<h4 id="reversingreversing-easy">[Reversing]reversing easy!</h4>
-<h4 id="webbabys-sqli---stage-1-">[Web]Baby&rsquo;s SQLi - Stage 1-</h4>
+<h4 id="reversingreversing-easy">
+  [Reversing]reversing easy!
+  <a class="anchor" href="#reversingreversing-easy">#</a>
+</h4>
+<h4 id="webbabys-sqli---stage-1-">
+  [Web]Baby&rsquo;s SQLi - Stage 1-
+  <a class="anchor" href="#webbabys-sqli---stage-1-">#</a>
+</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> palloc_home
-</code></pre></div><h4 id="network-can-you-login">[Network] Can you login？</h4>
+</code></pre></div><h4 id="network-can-you-login">
+  [Network] Can you login？
+  <a class="anchor" href="#network-can-you-login">#</a>
+</h4>
 <ol>
 <li>pcapファイルを開き、ftpでフィルタするとftpサーバのusernameとpasswordが見える。</li>
 <li><code>ftp</code>コマンドでftpサーバらしきものに接続</li>
@@ -434,9 +512,9 @@ ftp&gt; get <span style="color:#e6db74">${</span>FLAG_FILE<span style="color:#e6
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/retty3d/retty3d.github.io/commit/465ca39ee29ce611360a5d94302e4956b3ef4fd7" title='Last modified by retty3d | May 5, 2023' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/retty3d/retty3d.github.io/commit/d00b3646793670b6425f665273ca9a548b00ea9a" title='Last modified by retty3d | May 9, 2023' target="_blank" rel="noopener">
       <img src="https://retty3d.github.io/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>May 5, 2023</span>
+      <span>May 9, 2023</span>
     </a>
   </div>
 

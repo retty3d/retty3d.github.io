@@ -6,65 +6,16 @@
     <description>Recent content in ホーム on れてぃのーと</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 25 Apr 2023 17:20:50 +0900</lastBuildDate>
-    
-	<atom:link href="https://retty3d.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>利用環境・ツール一覧</title>
-      <link>https://retty3d.github.io/docs/ctf/build-environments/</link>
-      <pubDate>Wed, 26 Apr 2023 12:30:41 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/ctf/build-environments/</guid>
-      <description>利用OS  Windows 11 Home  Ubuntu 20.04 (WSL) Kali Linux 2023.1 (VM)    ツール (Windows11)  Visual Studio Code (テキストエディタ) Stirling (バイナリエディタ) Wireshark (プロトコルアナライザ) VirtualBox (仮想化ソフト)  Linux (WSL) $ sudo apt -y install \  radare2  radare2  Webサービス  Hash Toolkit Morse Code Translator  </description>
-    </item>
-    
-    <item>
-      <title>Level1</title>
-      <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</link>
-      <pubDate>Tue, 25 Apr 2023 16:57:13 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</guid>
-      <description>[Misc] Test Problem Flagを問題文からコピー・ペースト。
-[Crypto] Classical Cipher 問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
-[Reversing] Can you execute 問題ページからexec_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。
-&amp;gt; file exec_me exec_me: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.24 適切な環境でexec_meを実行するとフラグを得られる。
-追加情報
-readelf -hを利用することでバイナリに含まれるヘッダ情報を表示することが可能。
-[Misc] Can you open this file 問題ページからopen_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を.docなどに変更して開くとフラグを得られる。
-&amp;gt; file open_me open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.0, Code page: 932, Author: v, Template: Normal.dotm, Last Saved By: v, Revision Number: 1, Name of Creating Application: Microsoft Office Word, Total Editing Time: 28:00, Create Time/Date: Mon Oct 12 04:27:00 2015, Last Saved Time/Date: Mon Oct 12 04:55:00 2015, Number of Pages: 1, Number of Words: 3, Number of Characters: 23, Security: 0 [Web] HTML Page Chrome Dev Toolなどでソースコードを表示し、cpawなどで検索するとフラグを得られる。</description>
-    </item>
-    
-    <item>
-      <title>Level2</title>
-      <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/</link>
-      <pubDate>Tue, 25 Apr 2023 17:47:48 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/</guid>
-      <description>[Stego]隠されたフラグ 画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
-[Web] Redirect HTTPヘッダを確認する。
-$ curl -I http://q15.ctf.cpaw.site 302でリダイレクトされていることがわかる。 ついでにフラグもわかる。
-[Network+Forensic]HTTP Traffic  ダウンロードしたpcapファイルをWiresharkで開く ファイル label&amp;gt; オブジェクトをエクスポート &amp;gt; HTTP  すべて保存し、適切なディレクトリにファイルを配置する ブラウザで保存したページを開き、ボタンを押すとフラグを得られる  [Recon]Who am I ? Twitterアカウントを検索する。
-[Forensic]leaf in forest ダウンロードしたファイルをfileコマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。
-バイナリエディタでファイルを開いて眺めていると、大量のlovelive!とその中に怪しい文字列が含まれていることが分かる。
-目grepするか、文字列置換などしてフラグを抽出。
-今回はlovelive!を空白に置換して残った文字列から拾ってフラグを取得。 もっとスマートな方法があるかもしれないけどわからない。
-[Misc]Image! ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。
-LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示。
-邪魔な四角のオブジェクトを取り除くとフラグを得られる。
-[Crypto]Block Cipher #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&amp;#34;cpaw{&amp;#34;); for(i = key - 1; i &amp;lt;= strlen(flag); i+=key) for(j = i; j&amp;gt;= i - key + 1; j--) printf(&amp;#34;%c&amp;#34;, flag[j]); printf(&amp;#34;}&amp;#34;); return 0; }  実行時に引数を2つ受け取りそう  .</description>
-    </item>
-    
+    <lastBuildDate>Tue, 25 Apr 2023 17:20:50 +0900</lastBuildDate><atom:link href="https://retty3d.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>標準入力の受け取り方</title>
       <link>https://retty3d.github.io/docs/rust/stdio/</link>
       <pubDate>Fri, 05 May 2023 17:36:42 +0900</pubDate>
       
       <guid>https://retty3d.github.io/docs/rust/stdio/</guid>
-      <description>単一の数値 入力例
+      <description>単一の数値 #  入力例
  10
- use std::io; fn main() { let mut buf = String::new(); io::stdin() .read_line(&amp;amp;mut buf) .expect(&amp;#34;&amp;#34;); let x: i32 = buf.trim().parse().expect(&amp;#34;&amp;#34;); } 複数の数値 入力例
+ use std::io; fn main() { let mut buf = String::new(); io::stdin() .read_line(&amp;amp;mut buf) .expect(&amp;#34;&amp;#34;); let x: i32 = buf.trim().parse().expect(&amp;#34;&amp;#34;); } 複数の数値 #  入力例
  10 20
  use std::io; fn main() { let mut buf = String::new(); io::stdin() .read_line(&amp;amp;mut buf) .expect(&amp;#34;&amp;#34;); let numbers: Vec&amp;lt;i32&amp;gt; = buf .trim() .split_whitespace() .map(|x| x.parse().expect(&amp;#34;&amp;#34;)) .collect(); let a = numbers[0]; let b = numbers[1]; } </description>
     </item>
@@ -75,28 +26,74 @@ LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示
       <pubDate>Sat, 29 Apr 2023 15:04:40 +0900</pubDate>
       
       <guid>https://retty3d.github.io/docs/ctf/reverse-engineering/</guid>
-      <description>基本的な流れ 表層解析 → 静的解析 → 動的解析
-表層解析 ファイルの概要を調べる。
+      <description>基本的な流れ #  表層解析 → 静的解析 → 動的解析
+表層解析 #  ファイルの概要を調べる。
  file strings readelf objdump  </description>
     </item>
     
     <item>
-      <title>Ubuntu 20.04</title>
-      <link>https://retty3d.github.io/docs/build_environments/ubuntu2004_setup/</link>
-      <pubDate>Tue, 25 Apr 2023 21:26:00 +0900</pubDate>
+      <title>利用環境・ツール一覧</title>
+      <link>https://retty3d.github.io/docs/ctf/build-environments/</link>
+      <pubDate>Wed, 26 Apr 2023 12:30:41 +0900</pubDate>
       
-      <guid>https://retty3d.github.io/docs/build_environments/ubuntu2004_setup/</guid>
-      <description>WSL2 Ubuntu20.04 環境構築 1. 基本設定 $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ zsh $ mkdir .ssh $ mkdir -p src/github.com/$USERNAME # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &amp;#34;mail@example.com&amp;#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&amp;gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github.com # github疎通確認 $ git clone github.com:retty3d/dotfiles.git ~/dotfiles $ cd ~/dotfiles $ .</description>
+      <guid>https://retty3d.github.io/docs/ctf/build-environments/</guid>
+      <description>利用OS #   Host: Windows 11 Home  Ubuntu 20.04 (WSL) Kali Linux 2023.1 (VM)   Host: MX Linux 21.3  ツール (Windows11) #   Visual Studio Code (テキストエディタ) Stirling (バイナリエディタ) Wireshark (プロトコルアナライザ) VirtualBox (仮想化ソフト)  Linux (WSL) #   radare2  Install
+$ sudo apt -y install \  radare2 Webサービス #   Hash Toolkit Morse Code Translator  </description>
     </item>
     
     <item>
-      <title>シーザー暗号</title>
+      <title>Ubuntu 20.04</title>
+      <link>https://retty3d.github.io/docs/misc/ubuntu2004_setup/</link>
+      <pubDate>Tue, 25 Apr 2023 21:26:00 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/docs/misc/ubuntu2004_setup/</guid>
+      <description>WSL2 Ubuntu20.04 環境構築 #  1. 基本設定 #  $ cd ~ $ sudo apt update $ sudo apt install -y \ git \ neovim \ zsh $ mkdir .ssh $ mkdir -p src/github.com/$USERNAME # 開発用ディレクトリ作成 $ ssh-keygen -t ed25519 -C &amp;#34;mail@example.com&amp;#34; # 鍵ファイル名はgithub $ cat github.pub # コピーしてgithubのssh鍵に登録 $ nvim ~/.ssh/config # -&amp;gt; appendix-1を参照 $ chmod 700 ~/.ssh $ chmod 600 ~/.ssh/config $ ssh -T github.com # github疎通確認 $ git clone github.</description>
+    </item>
+    
+    <item>
+      <title>シーザー暗号の実装</title>
       <link>https://retty3d.github.io/docs/python/caesar-cipher/</link>
       <pubDate>Tue, 25 Apr 2023 20:10:59 +0900</pubDate>
       
       <guid>https://retty3d.github.io/docs/python/caesar-cipher/</guid>
-      <description>シーザー暗号 シーザー暗号- Wikipedia
-エンコーダー実装例 def caesar_encrypt(plaintext, shift): ciphertext = &amp;#34;&amp;#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext += chr((ord(char) - 65 + shift) % 26 + 65) else: ciphertext += chr((ord(char) - 97 + shift) % 26 + 97) else: ciphertext += char return ciphertext デコーダー実装例 def caesar_decrypt(ciphertext, shift): plaintext = &amp;#34;&amp;#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext += chr((ord(char) - 65 - shift) % 26 + 65) else: plaintext += chr((ord(char) - 97 - shift) % 26 + 97) else: plaintext += char return plaintext 解説   isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。</description>
+      <description>シーザー暗号 #  シーザー暗号- Wikipedia
+エンコーダー実装例 #  def caesar_encrypt(plaintext, shift): ciphertext = &amp;#34;&amp;#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext += chr((ord(char) - 65 + shift) % 26 + 65) else: ciphertext += chr((ord(char) - 97 + shift) % 26 + 97) else: ciphertext += char return ciphertext デコーダー実装例 #  def caesar_decrypt(ciphertext, shift): plaintext = &amp;#34;&amp;#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext += chr((ord(char) - 65 - shift) % 26 + 65) else: plaintext += chr((ord(char) - 97 - shift) % 26 + 97) else: plaintext += char return plaintext 解説 #    isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。</description>
+    </item>
+    
+    <item>
+      <title>Level2</title>
+      <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/</link>
+      <pubDate>Tue, 25 Apr 2023 17:47:48 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/</guid>
+      <description>[Stego]隠されたフラグ #  画像をダウンロードし拡大してみると画像の端にモールス信号が書かれており、これを翻訳したものがフラグになる。
+[Web] Redirect #  HTTPヘッダを確認する。
+$ curl -I http://q15.ctf.cpaw.site 302でリダイレクトされていることがわかる。 ついでにフラグもわかる。
+[Network+Forensic]HTTP Traffic #   ダウンロードしたpcapファイルをWiresharkで開く ファイル label&amp;gt; オブジェクトをエクスポート &amp;gt; HTTP  すべて保存し、適切なディレクトリにファイルを配置する ブラウザで保存したページを開き、ボタンを押すとフラグを得られる  [Recon]Who am I ? #  Twitterアカウントを検索する。
+[Forensic]leaf in forest #  ダウンロードしたファイルをfileコマンドで調べると、pcap capture fileであることが分かるので、Wiresharkで読み込んでみるがうまく開けない。
+バイナリエディタでファイルを開いて眺めていると、大量のlovelive!とその中に怪しい文字列が含まれていることが分かる。
+目grepするか、文字列置換などしてフラグを抽出。
+今回はlovelive!を空白に置換して残った文字列から拾ってフラグを取得。 もっとスマートな方法があるかもしれないけどわからない。
+[Misc]Image! #  ダウンロードしたzipをとりあえず解凍して中身をみてみるとLibreOfficeのファイルっぽいことがわかる。
+LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示。
+邪魔な四角のオブジェクトを取り除くとフラグを得られる。
+[Crypto]Block Cipher #  #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&amp;#34;cpaw{&amp;#34;); for(i = key - 1; i &amp;lt;= strlen(flag); i+=key) for(j = i; j&amp;gt;= i - key + 1; j--) printf(&amp;#34;%c&amp;#34;, flag[j]); printf(&amp;#34;}&amp;#34;); return 0; }  実行時に引数を2つ受け取りそう  .</description>
+    </item>
+    
+    <item>
+      <title>Level1</title>
+      <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</link>
+      <pubDate>Tue, 25 Apr 2023 16:57:13 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</guid>
+      <description>[Misc] Test Problem #  Flagを問題文からコピー・ペースト。
+[Crypto] Classical Cipher #  問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
+[Reversing] Can you execute #  問題ページからexec_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。
+&amp;gt; file exec_me exec_me: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.24 適切な環境でexec_meを実行するとフラグを得られる。
+追加情報
+readelf -hを利用することでバイナリに含まれるヘッダ情報を表示することが可能。
+[Misc] Can you open this file #  問題ページからopen_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を.docなどに変更して開くとフラグを得られる。
+&amp;gt; file open_me open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.</description>
     </item>
     
   </channel>

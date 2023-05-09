@@ -6,10 +6,17 @@
     <description>Recent content in CTF on れてぃのーと</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 05 May 2023 15:19:30 +0900</lastBuildDate>
-    
-	<atom:link href="https://retty3d.github.io/docs/ctf/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 05 May 2023 15:19:30 +0900</lastBuildDate><atom:link href="https://retty3d.github.io/docs/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>リバースエンジニアリング</title>
+      <link>https://retty3d.github.io/docs/ctf/reverse-engineering/</link>
+      <pubDate>Sat, 29 Apr 2023 15:04:40 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/docs/ctf/reverse-engineering/</guid>
+      <description>基本的な流れ #  表層解析 → 静的解析 → 動的解析
+表層解析 #  ファイルの概要を調べる。
+ file strings readelf objdump  </description>
+    </item>
     
     <item>
       <title>利用環境・ツール一覧</title>
@@ -17,18 +24,8 @@
       <pubDate>Wed, 26 Apr 2023 12:30:41 +0900</pubDate>
       
       <guid>https://retty3d.github.io/docs/ctf/build-environments/</guid>
-      <description>利用OS  Windows 11 Home  Ubuntu 20.04 (WSL) Kali Linux 2023.1 (VM)    ツール (Windows11)  Visual Studio Code (テキストエディタ) Stirling (バイナリエディタ) Wireshark (プロトコルアナライザ) VirtualBox (仮想化ソフト)  Linux (WSL) $ sudo apt -y install \  radare2  radare2  Webサービス  Hash Toolkit Morse Code Translator  </description>
-    </item>
-    
-    <item>
-      <title>リバースエンジニアリング</title>
-      <link>https://retty3d.github.io/docs/ctf/reverse-engineering/</link>
-      <pubDate>Sat, 29 Apr 2023 15:04:40 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/ctf/reverse-engineering/</guid>
-      <description>基本的な流れ 表層解析 → 静的解析 → 動的解析
-表層解析 ファイルの概要を調べる。
- file strings readelf objdump  </description>
+      <description>利用OS #   Host: Windows 11 Home  Ubuntu 20.04 (WSL) Kali Linux 2023.1 (VM)   Host: MX Linux 21.3  ツール (Windows11) #   Visual Studio Code (テキストエディタ) Stirling (バイナリエディタ) Wireshark (プロトコルアナライザ) VirtualBox (仮想化ソフト)  Linux (WSL) #   radare2  Install
+$ sudo apt -y install \  radare2 Webサービス #   Hash Toolkit Morse Code Translator  </description>
     </item>
     
   </channel>

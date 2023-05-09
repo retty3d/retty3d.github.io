@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="シーザー暗号 シーザー暗号- Wikipedia
-エンコーダー実装例 def caesar_encrypt(plaintext, shift): ciphertext = &#34;&#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext &#43;= chr((ord(char) - 65 &#43; shift) % 26 &#43; 65) else: ciphertext &#43;= chr((ord(char) - 97 &#43; shift) % 26 &#43; 97) else: ciphertext &#43;= char return ciphertext デコーダー実装例 def caesar_decrypt(ciphertext, shift): plaintext = &#34;&#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext &#43;= chr((ord(char) - 65 - shift) % 26 &#43; 65) else: plaintext &#43;= chr((ord(char) - 97 - shift) % 26 &#43; 97) else: plaintext &#43;= char return plaintext 解説   isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。">
+<meta name="description" content="シーザー暗号 #  シーザー暗号- Wikipedia
+エンコーダー実装例 #  def caesar_encrypt(plaintext, shift): ciphertext = &#34;&#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext &#43;= chr((ord(char) - 65 &#43; shift) % 26 &#43; 65) else: ciphertext &#43;= chr((ord(char) - 97 &#43; shift) % 26 &#43; 97) else: ciphertext &#43;= char return ciphertext デコーダー実装例 #  def caesar_decrypt(ciphertext, shift): plaintext = &#34;&#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext &#43;= chr((ord(char) - 65 - shift) % 26 &#43; 65) else: plaintext &#43;= chr((ord(char) - 97 - shift) % 26 &#43; 97) else: plaintext &#43;= char return plaintext 解説 #    isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="シーザー暗号" />
-<meta property="og:description" content="シーザー暗号 シーザー暗号- Wikipedia
-エンコーダー実装例 def caesar_encrypt(plaintext, shift): ciphertext = &#34;&#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext &#43;= chr((ord(char) - 65 &#43; shift) % 26 &#43; 65) else: ciphertext &#43;= chr((ord(char) - 97 &#43; shift) % 26 &#43; 97) else: ciphertext &#43;= char return ciphertext デコーダー実装例 def caesar_decrypt(ciphertext, shift): plaintext = &#34;&#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext &#43;= chr((ord(char) - 65 - shift) % 26 &#43; 65) else: plaintext &#43;= chr((ord(char) - 97 - shift) % 26 &#43; 97) else: plaintext &#43;= char return plaintext 解説   isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="シーザー暗号の実装" />
+<meta property="og:description" content="シーザー暗号 #  シーザー暗号- Wikipedia
+エンコーダー実装例 #  def caesar_encrypt(plaintext, shift): ciphertext = &#34;&#34; for char in plaintext: if char.isalpha(): if char.isupper(): ciphertext &#43;= chr((ord(char) - 65 &#43; shift) % 26 &#43; 65) else: ciphertext &#43;= chr((ord(char) - 97 &#43; shift) % 26 &#43; 97) else: ciphertext &#43;= char return ciphertext デコーダー実装例 #  def caesar_decrypt(ciphertext, shift): plaintext = &#34;&#34; for char in ciphertext: if char.isalpha(): if char.isupper(): plaintext &#43;= chr((ord(char) - 65 - shift) % 26 &#43; 65) else: plaintext &#43;= chr((ord(char) - 97 - shift) % 26 &#43; 97) else: plaintext &#43;= char return plaintext 解説 #    isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://retty3d.github.io/docs/python/caesar-cipher/" />
 <meta property="article:published_time" content="2023-04-25T20:10:59+09:00" />
-<meta property="article:modified_time" content="2023-05-05T17:06:47+09:00" />
-<title>シーザー暗号 | れてぃのーと</title>
+<meta property="article:modified_time" content="2023-05-09T15:57:57+09:00" />
+<title>シーザー暗号の実装 | れてぃのーと</title>
 <link rel="manifest" href="https://retty3d.github.io/manifest.json">
 <link rel="icon" href="https://retty3d.github.io/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="https://retty3d.github.io/book.min.7c92ceee66c6db521c0948767411cba54a79ac05e93a75c63bab418790687d88.css" integrity="sha256-fJLO7mbG21IcCUh2dBHLpUp5rAXpOnXGO6tBh5BofYg=" crossorigin="anonymous">
@@ -70,9 +70,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="toggle" checked />
-    <label for="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="flex justify-between">
-      <a role="button" class="">Python</a>
+    <input type="checkbox" id="section-e6354699fd2c0e4846471611979d74de" class="toggle"  />
+    <label for="section-e6354699fd2c0e4846471611979d74de" class="flex justify-between">
+      <a role="button" class="">Generative AI</a>
     </label>
   
 
@@ -86,7 +86,170 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://retty3d.github.io/docs/python/caesar-cipher/" class="active">シーザー暗号</a>
+    <input type="checkbox" id="section-19d5ce72f5be6d0da4ec898140ddf80b" class="toggle"  />
+    <label for="section-19d5ce72f5be6d0da4ec898140ddf80b" class="flex justify-between">
+      <a role="button" class="">ChatGPT</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bc467201b327634cf4794420f221e449" class="toggle"  />
+    <label for="section-bc467201b327634cf4794420f221e449" class="flex justify-between">
+      <a role="button" class="">CTF</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ac615972c0feff41ee8db9610c881361" class="toggle"  />
+    <label for="section-ac615972c0feff41ee8db9610c881361" class="flex justify-between">
+      <a role="button" class="">Write Up</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-434a2e378c96930677ae689e88bd6362" class="toggle"  />
+    <label for="section-434a2e378c96930677ae689e88bd6362" class="flex justify-between">
+      <a role="button" class="">CpawCTF</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-db2bcfa73b382cae9ba06dc905996c53" class="toggle"  />
+    <label for="section-db2bcfa73b382cae9ba06dc905996c53" class="flex justify-between">
+      <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/" class="">Level2</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7f0bc4fd74e403ddecf5c1220b61fa71" class="toggle"  />
+    <label for="section-7f0bc4fd74e403ddecf5c1220b61fa71" class="flex justify-between">
+      <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/" class="">Level1</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://retty3d.github.io/docs/ctf/reverse-engineering/" class="">リバースエンジニアリング</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://retty3d.github.io/docs/ctf/build-environments/" class="">利用環境・ツール一覧</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4743293995ef089d075c101a4e477e5c" class="toggle"  />
+    <label for="section-4743293995ef089d075c101a4e477e5c" class="flex justify-between">
+      <a role="button" class="">Misc</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://retty3d.github.io/docs/misc/ubuntu2004_setup/" class="">Ubuntu 20.04</a>
   
 
         </li>
@@ -138,9 +301,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-bc467201b327634cf4794420f221e449" class="toggle"  />
-    <label for="section-bc467201b327634cf4794420f221e449" class="flex justify-between">
-      <a role="button" class="">CTF</a>
+    <input type="checkbox" id="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="toggle" checked />
+    <label for="section-dbec22d72f9c0b4ccf9d173e77fe928c" class="flex justify-between">
+      <a role="button" class="">Python</a>
     </label>
   
 
@@ -154,122 +317,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://retty3d.github.io/docs/ctf/build-environments/" class="">利用環境・ツール一覧</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/ctf/reverse-engineering/" class="">リバースエンジニアリング</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-ac615972c0feff41ee8db9610c881361" class="toggle"  />
-    <label for="section-ac615972c0feff41ee8db9610c881361" class="flex justify-between">
-      <a role="button" class="">Write Up</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-434a2e378c96930677ae689e88bd6362" class="toggle"  />
-    <label for="section-434a2e378c96930677ae689e88bd6362" class="flex justify-between">
-      <a role="button" class="">CpawCTF</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/" class="">Level1</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/" class="">Level2</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-066599adf35bd20208481105d3523752" class="toggle"  />
-    <label for="section-066599adf35bd20208481105d3523752" class="flex justify-between">
-      <a role="button" class="">環境構築</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://retty3d.github.io/docs/build_environments/ubuntu2004_setup/" class="">Ubuntu 20.04</a>
+    <a href="https://retty3d.github.io/docs/python/caesar-cipher/" class="active">シーザー暗号の実装</a>
   
 
         </li>
@@ -316,7 +364,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="https://retty3d.github.io/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>シーザー暗号</strong>
+  <strong>シーザー暗号の実装</strong>
 
   <label for="toc-control">
     
@@ -330,9 +378,15 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h4 id="シーザー暗号">シーザー暗号</h4>
+  <article class="markdown"><h4 id="シーザー暗号">
+  シーザー暗号
+  <a class="anchor" href="#%e3%82%b7%e3%83%bc%e3%82%b6%e3%83%bc%e6%9a%97%e5%8f%b7">#</a>
+</h4>
 <p><a href="https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%BC%E3%82%B6%E3%83%BC%E6%9A%97%E5%8F%B7">シーザー暗号- Wikipedia</a></p>
-<h5 id="エンコーダー実装例">エンコーダー実装例</h5>
+<h5 id="エンコーダー実装例">
+  エンコーダー実装例
+  <a class="anchor" href="#%e3%82%a8%e3%83%b3%e3%82%b3%e3%83%bc%e3%83%80%e3%83%bc%e5%ae%9f%e8%a3%85%e4%be%8b">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">caesar_encrypt</span>(plaintext, shift):
     ciphertext <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
     <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> plaintext:
@@ -344,7 +398,10 @@ https://github.com/alex-shpak/hugo-book
         <span style="color:#66d9ef">else</span>:
             ciphertext <span style="color:#f92672">+=</span> char
     <span style="color:#66d9ef">return</span> ciphertext
-</code></pre></div><h5 id="デコーダー実装例">デコーダー実装例</h5>
+</code></pre></div><h5 id="デコーダー実装例">
+  デコーダー実装例
+  <a class="anchor" href="#%e3%83%87%e3%82%b3%e3%83%bc%e3%83%80%e3%83%bc%e5%ae%9f%e8%a3%85%e4%be%8b">#</a>
+</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">caesar_decrypt</span>(ciphertext, shift):
     plaintext <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
     <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> ciphertext:
@@ -356,7 +413,10 @@ https://github.com/alex-shpak/hugo-book
         <span style="color:#66d9ef">else</span>:
             plaintext <span style="color:#f92672">+=</span> char
     <span style="color:#66d9ef">return</span> plaintext
-</code></pre></div><h5 id="解説">解説</h5>
+</code></pre></div><h5 id="解説">
+  解説
+  <a class="anchor" href="#%e8%a7%a3%e8%aa%ac">#</a>
+</h5>
 <ul>
 <li>
 <p>isalpha()はPythonの文字列メソッドの一つで、与えられた文字列がアルファベットのみで構成されているかどうかを判定するために使用されます。</p>
@@ -396,9 +456,9 @@ False
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/retty3d/retty3d.github.io/commit/5f5dcf3776dcb8f0b3aa5b41cef05726a0bda574" title='Last modified by retty3d | May 5, 2023' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/retty3d/retty3d.github.io/commit/d00b3646793670b6425f665273ca9a548b00ea9a" title='Last modified by retty3d | May 9, 2023' target="_blank" rel="noopener">
       <img src="https://retty3d.github.io/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>May 5, 2023</span>
+      <span>May 9, 2023</span>
     </a>
   </div>
 
