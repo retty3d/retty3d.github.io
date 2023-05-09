@@ -1,13 +1,6 @@
 ---
 title: "標準入力の受け取り方"
 date: 2023-05-05T17:36:42+09:00
-draft: false
-# bookFlatSection: false
-# bookToc: true
-# bookHidden: false
-bookCollapseSection: false
-# bookComments: false
-# bookSearchExclude: false
 ---
 
 ## 単一の数値
