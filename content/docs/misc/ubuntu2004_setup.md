@@ -1,6 +1,7 @@
 ---
 title: "Ubuntu 20.04"
 date: 2023-04-25T21:26:00+09:00
+bookCollapseSection: false
 ---
 
 # WSL2 Ubuntu20.04 環境構築

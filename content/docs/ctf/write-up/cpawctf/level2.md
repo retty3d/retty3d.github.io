@@ -1,6 +1,7 @@
 ---
 title: "Level2"
 date: 2023-04-25T17:47:48+09:00
+bookCollapseSection: true
 ---
 
 #### [Stego]隠されたフラグ

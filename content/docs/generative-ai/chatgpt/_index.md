@@ -1,4 +1,6 @@
 ---
 title: "ChatGPT"
-date: 2023-05-09T14:51:15+09:00
+date: 2023-05-09T15:19:17+09:00
+bookCollapseSection: true
 ---
+

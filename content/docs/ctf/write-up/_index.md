@@ -1,10 +1,5 @@
 ---
 title: "Write Up"
+date: 2023-05-09T15:53:16+09:00
 bookCollapseSection: true
-# bookFlatSection: false
-# bookToc: true
-# bookHidden: false
-# bookCollapseSection: false
-# bookComments: false
-# bookSearchExclude: false
 ---
