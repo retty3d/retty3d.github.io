@@ -8,6 +8,22 @@
     <language>ja-jp</language>
     <lastBuildDate>Tue, 25 Apr 2023 17:37:54 +0900</lastBuildDate><atom:link href="https://retty3d.github.io/docs/ctf/write-up/cpawctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Level1</title>
+      <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</link>
+      <pubDate>Tue, 25 Apr 2023 16:57:13 +0900</pubDate>
+      
+      <guid>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</guid>
+      <description>[Misc] Test Problem #  Flagを問題文からコピー・ペースト。
+[Crypto] Classical Cipher #  問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
+[Reversing] Can you execute #  問題ページからexec_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。
+&amp;gt; file exec_me exec_me: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.24 適切な環境でexec_meを実行するとフラグを得られる。
+追加情報
+readelf -hを利用することでバイナリに含まれるヘッダ情報を表示することが可能。
+[Misc] Can you open this file #  問題ページからopen_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を.docなどに変更して開くとフラグを得られる。
+&amp;gt; file open_me open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.</description>
+    </item>
+    
+    <item>
       <title>Level2</title>
       <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level2/</link>
       <pubDate>Tue, 25 Apr 2023 17:47:48 +0900</pubDate>
@@ -25,22 +41,6 @@ $ curl -I http://q15.ctf.cpaw.site 302でリダイレクトされていること
 LibreOfficeをインストールし、misc 100.zipをLibreOffice Writerで表示。
 邪魔な四角のオブジェクトを取り除くとフラグを得られる。
 [Crypto]Block Cipher #  #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;string.h&amp;gt;int main(int argc, char* argv[]){ int i; int j; int key = atoi(argv[2]); const char* flag = argv[1]; printf(&amp;#34;cpaw{&amp;#34;); for(i = key - 1; i &amp;lt;= strlen(flag); i+=key) for(j = i; j&amp;gt;= i - key + 1; j--) printf(&amp;#34;%c&amp;#34;, flag[j]); printf(&amp;#34;}&amp;#34;); return 0; }  実行時に引数を2つ受け取りそう  .</description>
-    </item>
-    
-    <item>
-      <title>Level1</title>
-      <link>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</link>
-      <pubDate>Tue, 25 Apr 2023 16:57:13 +0900</pubDate>
-      
-      <guid>https://retty3d.github.io/docs/ctf/write-up/cpawctf/level1/</guid>
-      <description>[Misc] Test Problem #  Flagを問題文からコピー・ペースト。
-[Crypto] Classical Cipher #  問題文のシーザー暗号をdecryptするだけ。 参考: caesar-cipher
-[Reversing] Can you execute #  問題ページからexec_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、x86_64アーキテクチャのプロセッサを搭載し、GNU/Linux 2.6.24以上のカーネルを実行している環境で実行できることがわかる。
-&amp;gt; file exec_me exec_me: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.24 適切な環境でexec_meを実行するとフラグを得られる。
-追加情報
-readelf -hを利用することでバイナリに含まれるヘッダ情報を表示することが可能。
-[Misc] Can you open this file #  問題ページからopen_meをダウンロードし、Linuxのfileコマンドでファイルの形式を調べると、Microsoft Office Wordで作成されたファイルであることがわかる。拡張子を.docなどに変更して開くとフラグを得られる。
-&amp;gt; file open_me open_me: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.</description>
     </item>
     
   </channel>
